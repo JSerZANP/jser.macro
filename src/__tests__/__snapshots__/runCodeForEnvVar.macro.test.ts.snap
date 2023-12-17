@@ -1,0 +1,97 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`macros > 6. keep the code in IIFE if target env var is 'true' > 6. keep the code in IIFE if target env var is 'true' 1`] = `
+
+
+import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+runCodeForEnvVar('ENABLE_DEBUG', () => {
+  console.log('ENABLE_DEBUG enabled')
+})
+      
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+(() => {
+  console.log('ENABLE_DEBUG enabled');
+})();
+
+`;
+
+exports[`macros > 7. strip the code if the target env var doesn't exist > 7. strip the code if the target env var doesn't exist 1`] = `
+
+
+import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+runCodeForEnvVar('ENABLE_DEBUG', () => {
+  console.log('ENABLE_DEBUG enabled')
+})
+      
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+
+
+`;
+
+exports[`macros > 8. strip the code if the target env var doesn't match > 8. strip the code if the target env var doesn't match 1`] = `
+
+
+import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+runCodeForEnvVar('ENABLE_DEBUG', () => {
+  console.log('ENABLE_DEBUG enabled')
+})
+      
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+
+
+`;
+
+exports[`macros > 9. support multiple calls > 9. support multiple calls 1`] = `
+
+
+import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+runCodeForEnvVar('ENABLE_DEBUG', () => {
+  console.log('ENABLE_DEBUG enabled! 1')
+})
+runCodeForEnvVar('ENABLE_DEBUG', () => {
+  console.log('ENABLE_DEBUG enabled! 2')
+})
+      
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+(() => {
+  console.log('ENABLE_DEBUG enabled! 1');
+})();
+(() => {
+  console.log('ENABLE_DEBUG enabled! 2');
+})();
+
+`;
+
+exports[`macros > 10. support multiple calls with multiple env vars > 10. support multiple calls with multiple env vars 1`] = `
+
+
+import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+runCodeForEnvVar('ENABLE_DEBUG', () => {
+  console.log('ENABLE_DEBUG enabled! 1')
+})
+runCodeForEnvVar('ENABLE_ADVANCED_LOGGING', () => {
+  console.log('ENABLE_ADVANCED_LOGGING enabled! 2')
+})
+runCodeForEnvVar('ENABLE_AB_TEST', () => {
+  console.log('ENABLE_AB_TEST enabled')
+})
+      
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+(() => {
+  console.log('ENABLE_DEBUG enabled! 1');
+})();
+(() => {
+  console.log('ENABLE_ADVANCED_LOGGING enabled! 2');
+})();
+
+`;
