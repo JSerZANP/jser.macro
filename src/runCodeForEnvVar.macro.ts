@@ -2,7 +2,7 @@ import { MacroParams, createMacro, MacroError } from "babel-plugin-macros";
 import * as t from "@babel/types";
 
 function macro({ references }: MacroParams) {
-  const { runCodeForEnvVar } = references;
+  const { default: runCodeForEnvVar } = references;
   runCodeForEnvVar.forEach((path) => {
     const call = path.parent;
     if (t.isCallExpression(call)) {

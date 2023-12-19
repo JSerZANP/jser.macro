@@ -1,6 +1,6 @@
 {
   "name": "jser.macro",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Some babel macros made by jser",
   "keywords": [
     "babel-plugin-macros"
@@ -12,6 +12,7 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
+    "test:u": "vitest -u",
     "build": "tsup src/*.ts --watch --format cjs"
   },
   "type": "module",

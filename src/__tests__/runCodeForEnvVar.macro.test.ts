@@ -12,7 +12,7 @@ pluginTester({
       snapshot: false,
       error: true,
       code: `
-        import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+        import runCodeForEnvVar from '../dist/runCodeForEnvVar.macro'
         runCodeForEnvVar()
       `,
     },
@@ -21,7 +21,7 @@ pluginTester({
       snapshot: false,
       error: true,
       code: `
-        import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+        import runCodeForEnvVar from '../dist/runCodeForEnvVar.macro'
         runCodeForEnvVar('ENABLE_DEBUG')
       `,
     },
@@ -30,7 +30,7 @@ pluginTester({
       snapshot: false,
       error: true,
       code: `
-        import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+        import runCodeForEnvVar from '../dist/runCodeForEnvVar.macro'
         runCodeForEnvVar(true, () => {})
       `,
     },
@@ -39,7 +39,7 @@ pluginTester({
       snapshot: false,
       error: true,
       code: `
-        import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+        import runCodeForEnvVar from '../dist/runCodeForEnvVar.macro'
         const variable = 'true';
         runCodeForEnvVar(variable, () => {})
       `,
@@ -49,7 +49,7 @@ pluginTester({
       snapshot: false,
       error: true,
       code: `
-        import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+        import runCodeForEnvVar from '../dist/runCodeForEnvVar.macro'
         runCodeForEnvVar('ENABLE_DEBUG', true)
       `,
     },
@@ -59,7 +59,7 @@ pluginTester({
         process.env.ENABLE_DEBUG = "true";
       },
       code: `
-        import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+        import runCodeForEnvVar from '../dist/runCodeForEnvVar.macro'
         runCodeForEnvVar('ENABLE_DEBUG', () => {
           console.log('ENABLE_DEBUG enabled')
         })
@@ -71,7 +71,7 @@ pluginTester({
         process.env.ENABLE_DEBUG = "";
       },
       code: `
-        import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+        import runCodeForEnvVar from '../dist/runCodeForEnvVar.macro'
         runCodeForEnvVar('ENABLE_DEBUG', () => {
           console.log('ENABLE_DEBUG enabled')
         })
@@ -83,7 +83,7 @@ pluginTester({
         process.env.ENABLE_DEBUG = "SOME_VALUE";
       },
       code: `
-        import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+        import runCodeForEnvVar from '../dist/runCodeForEnvVar.macro'
         runCodeForEnvVar('ENABLE_DEBUG', () => {
           console.log('ENABLE_DEBUG enabled')
         })
@@ -95,7 +95,7 @@ pluginTester({
         process.env.ENABLE_DEBUG = "true";
       },
       code: `
-        import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+        import runCodeForEnvVar from '../dist/runCodeForEnvVar.macro'
         runCodeForEnvVar('ENABLE_DEBUG', () => {
           console.log('ENABLE_DEBUG enabled! 1')
         })
@@ -112,7 +112,7 @@ pluginTester({
         process.env.ENABLE_AB_TEST = "false";
       },
       code: `
-        import {runCodeForEnvVar} from '../dist/runCodeForEnvVar.macro'
+        import runCodeForEnvVar from '../dist/runCodeForEnvVar.macro'
         runCodeForEnvVar('ENABLE_DEBUG', () => {
           console.log('ENABLE_DEBUG enabled! 1')
         })
