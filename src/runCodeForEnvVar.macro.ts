@@ -1,5 +1,5 @@
 import { MacroParams, createMacro, MacroError } from "babel-plugin-macros";
-import t from "@babel/types";
+import * as t from "@babel/types";
 
 function macro({ references }: MacroParams) {
   const { runCodeForEnvVar } = references;
