@@ -1,9 +1,13 @@
 {
   "name": "jser.macro",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Some babel macros made by jser",
   "keywords": [
     "babel-plugin-macros"
+  ],
+  "files": [
+    "/dist",
+    "/README.md"
   ],
   "main": "index.js",
   "scripts": {
