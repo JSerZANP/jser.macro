@@ -12,7 +12,7 @@ Here is a collection of some babel macros I created.
 ### 1. `runCodeForEnvVar()` - run code for specific env var and strip the code if not found.
 
 ```js
-import { runCodeForEnvVar } from "jser.macro";
+import runCodeForEnvVar from 'jser.macro/dist/runCodeForEnvVar.macro.cjs';
 
 runCodeForEnvVar("ENABLE_DEBUG", () => {
   console.log("ENABLE_DEBUG enabled! 1");
